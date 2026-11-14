@@ -1,0 +1,22 @@
+import fs from "fs";
+import path from "path";
+
+import type { IProduct } from "../types/product";
+
+const filePath = path.join(
+  process.cwd(),
+  "./src/database/db.json"
+);
+
+export const productService = (): IProduct[] => {
+  const result = fs.readFileSync(filePath, "utf-8");
+
+  return JSON.parse(result) as IProduct[];
+};
+
+export const createProduct = (payload: IProduct[]) => {
+  fs.writeFileSync(
+    filePath,
+    JSON.stringify(payload, null, 2)
+  );
+};
