@@ -1,4 +1,5 @@
-import {createServer, IncomingMessage, Server, ServerResponse} from "http";
+import { createServer } from "http";
+import type { IncomingMessage, Server, ServerResponse } from "http";
 
 import routeHandler from "./routes/route";
 import config from "./config";
