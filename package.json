@@ -1,27 +1,41 @@
 {
   "name": "nodets-shopapi",
   "version": "1.0.0",
-  "description": "Raw Node.js HTTP Server & REST API using TypeScript",
-  "main": "src/server.ts",
+  "description": "Raw Node.js HTTP E-commerce REST API with TypeScript, MongoDB Atlas and SSLCommerz",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch ./src/server.ts",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "admin:create": "tsx ./src/scripts/createAdmin.ts"
   },
   "keywords": [
     "nodejs",
     "typescript",
-    "rest-api"
+    "rest-api",
+    "mongodb",
+    "mongoose",
+    "sslcommerz",
+    "ecommerce"
   ],
-  "author": "Jahirul Islam",
+  "author": "",
   "license": "ISC",
   "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "devDependencies": {
-    "@types/node": "^26.6.6",
-    "typescript": "^7.0.2"
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^22.15.30",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
-    "dotenv": "^18.0.10",
-    "tsx": "^4.23.15"
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.1",
+    "swagger-ui-dist": "^5.35.0"
   }
 }
